@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 4457367135806200561}
-  _brushSizeMinMax: {x: 0.01, y: 0.2}
+  _brushSizeMinMax: {x: 0.01, y: 0.4}
 --- !u!114 &6131337442106454056
 MonoBehaviour:
   m_ObjectHideFlags: 0
