@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Game.Cameras;
 using Game.Data;
 using Game.Saving;
 using Game.Scripts.SimpleMVVM;
@@ -29,6 +30,37 @@ namespace Game.Scripts
                 GameState.RuntimeData.Brush.Value = data;
             }
         }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            CameraController.CameraDragStarted += OnCameraDragStarted;
+            CameraController.CameraDragEnded += OnCameraDragEnded;
+        }
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+            CameraController.CameraDragStarted -= OnCameraDragStarted;
+            CameraController.CameraDragEnded -= OnCameraDragEnded;
+        }
+        
+        private void OnCameraDragStarted()
+        {
+            // Disabling painting while dragging camera
+            SetPaintingActive(false);
+        }
+
+        private void OnCameraDragEnded()
+        {
+            // Enabling painting while camera drag ended
+            SetPaintingActive(true);
+        }
+
+        public void SetPaintingActive(bool isActive)
+        {
+            _paintSphere.gameObject.SetActive(isActive);
+        }
+
 
         private Property<RuntimeGameData.BrushData> GetBrushBinding() => GameState.RuntimeData.Brush;
         
