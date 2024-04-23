@@ -1,5 +1,5 @@
 using System;
-using Sirenix.OdinInspector;
+using PaintCore;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -13,16 +13,26 @@ namespace Game.Scripts.UI
         [SerializeField] private Button _clearButton;
         [SerializeField] private Button _saveButton;
         [SerializeField] private Button _loadButton;
-        [SerializeField] private Button _undoButton;
-        [SerializeField] private Button _redoButton;
 
         private PaintableObjectsManager _objectsManager;
         private PaintingManager _paintingManager;
+        
        
+        public PaintableObject CurrentObject => _objectsManager.CurrentObject.GetValue();
 
         private void Awake()
         {
             BindComponents();
+        }
+
+        private static T EnsureComponent<T>(Component component) where T : Component
+        {
+            var instance = component.GetComponent<T>();
+            if (instance == null)
+            {
+                instance = component.gameObject.AddComponent<T>();
+            }
+            return instance;
         }
 
         private void OnEnable()
@@ -50,18 +60,21 @@ namespace Game.Scripts.UI
             _nextObjectButton.onClick.AddListener(() => _objectsManager.SpawnNext());
             _previousObjectButton.onClick.AddListener(() => _objectsManager.SpawnPrevious());
 
-            _saveButton.onClick.AddListener(() => GetPO().Save());
-            _loadButton.onClick.AddListener(() => GetPO().Load());
-            _clearButton.onClick.AddListener(() => GetPO().Clear());
+            _saveButton.onClick.AddListener(() => CurrentObject.Save());
+            _loadButton.onClick.AddListener(() => CurrentObject.Load());
+            _clearButton.onClick.AddListener(() => CurrentObject.Clear());
             
-            _undoButton.onClick.AddListener(() => GetPO().UndoTextures());
-            _redoButton.onClick.AddListener(() => GetPO().RedoTextures());
-            return;
+        }
 
-            PaintableObject GetPO()
-            {
-                return _objectsManager.CurrentObject.GetValue();
-            }
+        private void Update()
+        {
+            // Of course this is inefficient to do this in update, but buttons state depends on PaintIn3D and I don't want
+            // to figure out its events right now, easier just to update state every frame
+            UpdateButtonsState();
+        }
+
+        private void UpdateButtonsState()
+        {
         }
     }
 }

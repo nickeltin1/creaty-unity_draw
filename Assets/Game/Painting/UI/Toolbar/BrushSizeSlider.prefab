@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5649234493324727285}
   - component: {fileID: 5105629587416607047}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HandleRect1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 7597994356190757657}
   - component: {fileID: 1993854843433506468}
   - component: {fileID: 749728008784396859}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4171004456551253300}
   - component: {fileID: 8588394368239580536}
   - component: {fileID: 3525899973579359296}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 4677435568492964624}
   - component: {fileID: 8167704202786370462}
   - component: {fileID: 4168323999738377431}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6929966852540413693}
   - component: {fileID: 1053966840860028683}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HandleRect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 4457367135806200561}
   - component: {fileID: 3012136781938453298}
   - component: {fileID: 6131337442106454056}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BrushSizeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,6 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slider: {fileID: 4457367135806200561}
+  _brushSizeMinMax: {x: 0.01, y: 0.2}
 --- !u!114 &6131337442106454056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +544,7 @@ GameObject:
   - component: {fileID: 7232188632475129969}
   - component: {fileID: 2683909937852403769}
   - component: {fileID: 6713243928697798604}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +621,7 @@ GameObject:
   - component: {fileID: 8073879505388457937}
   - component: {fileID: 3737289746920318070}
   - component: {fileID: 7350678882894934616}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BG1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

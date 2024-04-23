@@ -48,6 +48,8 @@ namespace Game.Scripts
             SpawnPaintableObject(prefab);
             
             CurrentObjectIndex = index;
+            GameState.RuntimeData.SelectedObjectIndex.Value = index;
+            GameState.Save();
         }
         
         public void SpawnPaintableObject(PaintableObject prefab)
@@ -62,12 +64,12 @@ namespace Game.Scripts
             var old = _currentObject.Value;
             if (old != null)
             {
-                old.Destruct();
+                // old.Destruct();
                 Destroy(old.gameObject);
             }
             
             var instance = Instantiate(prefab, _objectsRoot);
-            instance.Init();
+            // instance.Init();
 
             _currentObject.Value = instance;
         }

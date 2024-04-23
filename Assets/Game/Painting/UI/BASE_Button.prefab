@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3279321031977774384}
   - component: {fileID: 3076343693935572932}
   - component: {fileID: 7088168778259624868}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BASE_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 4675837955682894515}
   - component: {fileID: 8802373600788824252}
   - component: {fileID: 8699195968192185370}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

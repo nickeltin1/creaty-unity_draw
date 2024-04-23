@@ -20,9 +20,6 @@ namespace Game.Scripts
         [SerializeField, Required] private CwMaterialCloner _materialCloner;
         [SerializeField, Required] private CwPaintableMeshTexture _paintableMeshTexture;
         
-        [SerializeField] private int _undoRedoLimit = 20;
-        [SerializeField] private CwPaintableTexture.UndoRedoType _undoRedoType = CwPaintableTexture.UndoRedoType.FullTextureCopy;
-        
 
 
 #if UNITY_EDITOR
@@ -81,36 +78,7 @@ namespace Game.Scripts
         private void Awake()
         {
             _textures = GetComponentsInChildren<CwPaintableTexture>().ToHashSet();
-            foreach (var texture in _textures)
-            {
-                texture.UndoRedo = _undoRedoType;
-                texture.StateLimit = _undoRedoLimit;
-            }
         }
-
-        public void Init()
-        {
-            // TODO:
-        }
-
-        public void Destruct()
-        {
-            // TODO:
-        }
-
-        public void RedoTextures()
-        {
-            foreach (var texture in _textures) texture.Redo();
-        }
-
-        public void UndoTextures()
-        {
-            foreach (var texture in _textures) texture.Undo();
-        }
-
-        public bool GetCanUndo() => _textures.Any(texture => texture.CanUndo);
-
-        public bool GetCanRedo() => _textures.Any(texture => texture.CanRedo);
 
         public void Save()
         {

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Game.Data;
 using Game.Saving;
 using Game.Scripts.SimpleMVVM;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,8 +11,14 @@ namespace Game.Scripts.UI
     public class BrushSizeSlider : BindableComponent
     {
         [SerializeField] private Slider _slider;
-        
-        
+        [SerializeField, DisableInPlayMode] private Vector2 _brushSizeMinMax = new Vector2(0.01f, 0.2f);
+
+        private void Awake()
+        {
+            _slider.minValue = _brushSizeMinMax.x;
+            _slider.maxValue = _brushSizeMinMax.y;
+        }
+
         private void SubscribeForSliderEvents()
         {
             _slider.onValueChanged.AddListener(SliderValueChanged);
@@ -53,9 +60,6 @@ namespace Game.Scripts.UI
         public override void Refresh()
         {
             var data = GetBrushBinding().Value;
-            
-            _slider.minValue = data.BrushMinMax.x;
-            _slider.maxValue = data.BrushMinMax.y;
             _slider.value = data.Size;
         }
     }

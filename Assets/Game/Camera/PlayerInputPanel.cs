@@ -10,6 +10,8 @@ namespace Game.Cameras
         public static event Action<PointerEventData> PointerDragged; 
         public static event Action<PointerEventData> PointerDragStarted; 
         public static event Action<PointerEventData> PointerDragEnded; 
+        public static event Action<PointerEventData> PointerDown; 
+        public static event Action<PointerEventData> PointerUp; 
         
         public void OnDrag(PointerEventData eventData)
         {
@@ -18,10 +20,12 @@ namespace Game.Cameras
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            PointerDown?.Invoke(eventData);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            PointerUp?.Invoke(eventData);
         }
 
         public void OnBeginDrag(PointerEventData eventData)

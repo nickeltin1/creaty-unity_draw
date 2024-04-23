@@ -104,7 +104,7 @@ MonoBehaviour:
     v: 0
   baseScale: {x: 0, y: 0, z: 0}
   includeScale: 1
-  useMesh: 0
+  useMesh: 1
   activation: 0
   otherRenderers: []
   onActivating:
@@ -156,7 +156,7 @@ MonoBehaviour:
   group:
     index: 0
   undoRedo: 1
-  stateLimit: 20
+  stateLimit: 10
   saveLoad: 0
   saveName: 
   width: 1024

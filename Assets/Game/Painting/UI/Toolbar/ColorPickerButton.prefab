@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8674378728439545484}
   - component: {fileID: 998943889110212323}
   - component: {fileID: 6361515234950578813}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2413806693520163455, guid: 8f25d002e56aed94bbbb751a4eabd2be,
         type: 3}
+    - target: {fileID: 5944282384487386541, guid: e37cc308e7d6ca74db77ecfb3ca7507c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6588744084164092420, guid: e37cc308e7d6ca74db77ecfb3ca7507c,
         type: 3}
       propertyPath: _colorFill

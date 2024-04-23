@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4435066593831066993}
   - component: {fileID: 1221780384960598943}
   - component: {fileID: 3955413780832914264}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,6 +284,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 562271146696040843}
+    - targetCorrespondingSourceObject: {fileID: 2777329423473417727, guid: 7dd46ced684355348b49be51af7b2bea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7425808676419329402}
     - targetCorrespondingSourceObject: {fileID: 6363201331996514815, guid: 7dd46ced684355348b49be51af7b2bea,
         type: 3}
       insertIndex: -1
@@ -319,6 +323,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!225 &7425808676419329402
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447295365531452653}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &4267522919343153211 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 695687871168035113, guid: 7dd46ced684355348b49be51af7b2bea,

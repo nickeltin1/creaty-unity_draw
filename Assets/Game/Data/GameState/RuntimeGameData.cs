@@ -19,9 +19,6 @@ namespace Game.Scripts.SimpleMVVM
         {
             public float Size;
             public Color Color;
-            
-            // Not saved
-            public Vector2 BrushMinMax;
         }
         
         
@@ -30,8 +27,15 @@ namespace Game.Scripts.SimpleMVVM
         {
             public float YRotation;
             public float XRotation;
+
+            public override string ToString() => $"Y: {YRotation} X: {XRotation}";
         }
         
+        /// <summary>
+        /// By hand binding is not convenient when adding data, there should some binding system (reflections, expression trees, codegen)
+        /// Also check <see cref="Unity.Properties"/>, not familiar with it but it might have something usefull  
+        /// </summary>
+        /// <param name="serializedData"></param>
         public void Read(SerializedGameData serializedData)
         {
             SelectedObjectIndex.Value = serializedData.SelectedObjectIndex;
@@ -60,8 +64,8 @@ namespace Game.Scripts.SimpleMVVM
             serializedData.Brush.Color = brushData.Color;
 
             var cameraData = Camera.Value;
+            serializedData.Camera.YRotation = cameraData.YRotation;
             serializedData.Camera.XRotation = cameraData.XRotation;
-            serializedData.Camera.XRotation = cameraData.YRotation;
         }
     }
 }
